@@ -1,0 +1,62 @@
+@use "../utils/variables" as var;
+@use "../utils/mixins" as mix;
+
+.services {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var.$offWhite;
+    padding: 40px 0px;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 80px;
+        width: 100%;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        width: 335px;
+
+        &__header {
+            font-size: 36px;
+            font-weight: var.$extraBold;
+            color: var.$darkBlue;
+        }
+
+        .description {
+            color: var.$grey;
+        }
+    }
+
+    &__image {
+        width: 334px;
+        height: 211px;
+    }
+}
+
+@include mix.breakpoint(medium) {
+    .services {
+        padding: 100px 0px;
+        
+        .wrapper {
+            justify-content: center;
+            width: 1440px;
+            flex-direction: row-reverse;
+            column-gap: 110px;
+        }
+
+        &__image {
+            width: 523px;
+            height: 330px;
+        }
+
+        &__text {
+            width: 435px;
+        }
+    }
+}

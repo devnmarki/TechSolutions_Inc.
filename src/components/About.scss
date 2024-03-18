@@ -1,0 +1,50 @@
+@use "../utils/variables" as var;
+@use "../utils/mixins" as mix;
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 185px 100px;
+    column-gap: 193px;
+
+    &__image {
+        width: 437px;
+        height: 361px;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        width: 435px;
+
+        &__header {
+            font-size: 36px;
+            font-weight: var.$extraBold;
+            color: var.$darkBlue;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: var.$grey;
+        }
+    }
+}
+
+@include mix.breakpoint-desktop(medium) {
+    .about {
+        flex-direction: column-reverse;
+        padding: 40px 0px;
+        row-gap: 100px;
+
+        &__image {
+            width: 335px;
+            height: 276px;
+        }
+
+        &__text {
+            width: 333px;
+        }
+    }
+}

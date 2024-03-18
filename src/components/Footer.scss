@@ -1,0 +1,116 @@
+@use "../utils/variables.scss" as var;
+@use "../utils/mixins.scss" as mix;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var.$offWhite;
+
+    &__bg {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        background-color: var.$darkBlue;
+        padding: 50px 0px;
+        border-radius: 50px 50px 0px 0px;
+        row-gap: 50px;
+    }
+
+    .primary {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        row-gap: 20px;
+
+        &__logo {
+            width: 180px;
+            font-size: 24px;
+            font-weight: var.$semiBold;
+            color: var.$white;
+        }
+
+        &__description {
+            color: var.$grey;
+        }
+    }
+
+    .secondary {
+        display: flex;
+        flex-direction: column;
+        row-gap: 57px;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+
+            p {
+                color: var.$grey;
+                text-align: center;
+                cursor: pointer;
+                
+                &:hover {
+                    color: var.$white;
+                    text-decoration: underline;
+                }
+            }
+
+            .line {
+                display: none;
+            }
+        }
+
+        .social_media {
+            display: flex;
+            justify-content: center;
+            column-gap: 10px;
+
+            .link {
+                display: grid;
+                place-items: center;
+                width: 40px;
+                height: 40px;
+                border: 2px solid var.$lightBlue;
+                border-radius: 100px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@include mix.breakpoint(medium) {
+    .footer {
+
+        &__bg {
+            padding: 105px 0px;
+            justify-content: center;
+            flex-direction: row;
+            column-gap: 264px;
+        }
+
+        .secondary {
+
+            .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: end;
+
+                .line {
+                    display: block;
+                    width: 2px;
+                    height: 24px;
+                    background-color: var.$grey;
+                    border-radius: 100px;
+                    margin: 0px 20px;
+                }
+            }
+
+            .social_media {
+                justify-content: end;
+            }
+
+        }
+    }
+}
